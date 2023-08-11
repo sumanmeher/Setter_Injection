@@ -31,7 +31,7 @@
 			<value>Jashobanti</value>
 		</property>
 		<property name="fage">
-			<value>57</value>
+			<value>52</value>
 		</property>
 		<property name="mage">
 			<value>47</value>
@@ -53,10 +53,15 @@
 
 
 
-	<bean id="inst" class="com.digit.ConstructorInjuction3.Institute">
-		<constructor-arg value="1" type="int"></constructor-arg>
-		<constructor-arg value="Name some institutes"></constructor-arg>
-		<constructor-arg>
+
+	<bean id="inst" class="com.digit.SetterInjuction3.Institute">
+		<property name="int_id">
+			<value>1</value>
+		</property>
+		<property name="statement">
+			<value>Name some institute</value>
+		</property>
+		<property name="name">
 			<list>
 				<value>A</value>
 				<value>B</value>
@@ -65,43 +70,66 @@
 				<value>E</value>
 			</list>
 
-		</constructor-arg>
+		</property>
 	</bean>
+
+
 
 
 
 
 
 	<bean id="inst-1"
-		class="com.digit.ConstructorInjuction4.Institute_Dtls">
-		<constructor-arg value="ASDFGH"></constructor-arg>
-		<constructor-arg value="2001" type="int"></constructor-arg>
-		<constructor-arg value="200000" type="int"></constructor-arg>
+		class="com.digit.SetterInjuction4.Institute_Dtls">
+		<property name="name">
+			<value>ASDFGH</value>
+		</property>
+		<property name="yoe">
+			<value>2001</value>
+		</property>
+		<property name="turnOver">
+			<value>200000</value>
+		</property>
 	</bean>
 	<bean id="inst-2"
-		class="com.digit.ConstructorInjuction4.Institute_Dtls">
-		<constructor-arg value="LKJHGF"></constructor-arg>
-		<constructor-arg value="2011" type="int"></constructor-arg>
-		<constructor-arg value="900000" type="int"></constructor-arg>
+		class="com.digit.SetterInjuction4.Institute_Dtls">
+		<property name="name">
+			<value>LKJHG</value>
+		</property>
+		<property name="yoe">
+			<value>2007</value>
+		</property>
+		<property name="turnOver">
+			<value>600000</value>
+		</property>
 	</bean>
 	<bean id="inst-3"
-		class="com.digit.ConstructorInjuction4.Institute_Dtls">
-		<constructor-arg value="VBNM"></constructor-arg>
-		<constructor-arg value="2018" type="int"></constructor-arg>
-		<constructor-arg value="60000" type="int"></constructor-arg>
+		class="com.digit.SetterInjuction4.Institute_Dtls">
+		<property name="name">
+			<value>MNBVC</value>
+		</property>
+		<property name="yoe">
+			<value>2015</value>
+		</property>
+		<property name="turnOver">
+			<value>700000</value>
+		</property>
 	</bean>
-	<bean id="institute"
-		class="com.digit.ConstructorInjuction4.Institute">
-		<constructor-arg value="1" type="int"></constructor-arg>
-		<constructor-arg value="Name some institutes"></constructor-arg>
-		<constructor-arg>
+	<bean id="institute" class="com.digit.SetterInjuction4.Institute">
+		<property name="int_id">
+			<value>1</value>
+		</property>
+		<property name="statement">
+			<value>Name some institute</value>
+		</property>
+		<property name="name">
 			<list>
 				<ref bean="inst-1" />
 				<ref bean="inst-2" />
 				<ref bean="inst-3" />
 			</list>
 
-		</constructor-arg>
+		</property>
 	</bean>
 
 
