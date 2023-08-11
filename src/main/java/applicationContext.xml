@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="bean1" class="com.digit.SetterInjuction1.Employee">
+		<property name="id">
+			<value>1</value>
+		</property>
+
+		<property name="name">
+			<value>Suman</value>
+		</property>
+	</bean>
+
+
+
+
+
+
+
+
+
+	<bean id="pB" class="com.digit.SetterInjuction2.Parent">
+		<property name="fname">
+			<value>Kirtana</value>
+		</property>
+		<property name="mname">
+			<value>Jashobanti</value>
+		</property>
+		<property name="fage">
+			<value>57</value>
+		</property>
+		<property name="mage">
+			<value>47</value>
+		</property>
+	</bean>
+	<bean id="stud1" class="com.digit.SetterInjuction2.Student">
+		<property name="sid">
+			<value>1</value>
+		</property>
+		<property name="name">
+			<value>Suman</value>
+		</property>
+		<property name="p">
+			<ref bean="pB" />
+		</property>
+	</bean>
+
+
+
+
+
+	<bean id="inst" class="com.digit.ConstructorInjuction3.Institute">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg value="Name some institutes"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>A</value>
+				<value>B</value>
+				<value>C</value>
+				<value>D</value>
+				<value>E</value>
+			</list>
+
+		</constructor-arg>
+	</bean>
+
+
+
+
+
+	<bean id="inst-1"
+		class="com.digit.ConstructorInjuction4.Institute_Dtls">
+		<constructor-arg value="ASDFGH"></constructor-arg>
+		<constructor-arg value="2001" type="int"></constructor-arg>
+		<constructor-arg value="200000" type="int"></constructor-arg>
+	</bean>
+	<bean id="inst-2"
+		class="com.digit.ConstructorInjuction4.Institute_Dtls">
+		<constructor-arg value="LKJHGF"></constructor-arg>
+		<constructor-arg value="2011" type="int"></constructor-arg>
+		<constructor-arg value="900000" type="int"></constructor-arg>
+	</bean>
+	<bean id="inst-3"
+		class="com.digit.ConstructorInjuction4.Institute_Dtls">
+		<constructor-arg value="VBNM"></constructor-arg>
+		<constructor-arg value="2018" type="int"></constructor-arg>
+		<constructor-arg value="60000" type="int"></constructor-arg>
+	</bean>
+	<bean id="institute"
+		class="com.digit.ConstructorInjuction4.Institute">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg value="Name some institutes"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="inst-1" />
+				<ref bean="inst-2" />
+				<ref bean="inst-3" />
+			</list>
+
+		</constructor-arg>
+	</bean>
+
+
+
+
+
+
+
+	<bean id="emp-1"
+		class="com.digit.ConstructorInjuction5.EmployeeDetails">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg value="Suman"></constructor-arg>
+		<constructor-arg value="50000" type="int"></constructor-arg>
+	</bean>
+	<bean id="emp-2"
+		class="com.digit.ConstructorInjuction5.EmployeeDetails">
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="Ashi"></constructor-arg>
+		<constructor-arg value="50000" type="int"></constructor-arg>
+	</bean>
+
+	<bean id="comp-1" class="com.digit.ConstructorInjuction5.Company">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg value="Digit"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="emp-1" />
+			</list>
+
+		</constructor-arg>
+	</bean>
+	<bean id="comp-2" class="com.digit.ConstructorInjuction5.Company">
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="Digit"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="emp-2" />
+			</list>
+
+		</constructor-arg>
+	</bean>
+
+
+
+
+
+
+	<bean id="q" class="com.digit.ConstructorInjuction6.Question">
+
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="What is the capital of India?"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="Suman" value="India"></entry>
+				<entry key="Ashi" value="abc"></entry>
+				<entry key="Khushi" value="xyz"></entry>
+				<entry key="Kajal" value="efg"></entry>
+			</map>
+		</constructor-arg>
+	</bean>
+
+
+
+
+	<bean id="ques" class="com.digit.ConstructorInjuction7.Question">
+
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="What is the capital of India?"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key-ref="user1" value-ref="ans1"></entry>
+				<entry key-ref="user2" value-ref="ans2"></entry>
+
+			</map>
+		</constructor-arg>
+	</bean>
+	<bean id="user1" class="com.digit.ConstructorInjuction7.User">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg value="User1"></constructor-arg>
+	</bean>
+	<bean id="user2" class="com.digit.ConstructorInjuction7.User">
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="User2"></constructor-arg>
+	</bean>
+
+	<bean id="ans1" class="com.digit.ConstructorInjuction7.Answers">
+		<constructor-arg value="1" type="int"></constructor-arg>
+		<constructor-arg value="Gujrat"></constructor-arg>
+	</bean>
+
+	<bean id="ans2" class="com.digit.ConstructorInjuction7.Answers">
+		<constructor-arg value="2" type="int"></constructor-arg>
+		<constructor-arg value="Delhi"></constructor-arg>
+	</bean>
+
+</beans>
